@@ -132,18 +132,25 @@
                     "group": "Authentication",
                     "expanded": false,
                     "pages": [
+                      "api-reference/authentication/setup-status",
+                      "api-reference/authentication/setup-admin",
+                      "api-reference/authentication/get-register-switch",
+                      "api-reference/authentication/update-register-switch",
                       "api-reference/authentication/login",
                       "api-reference/authentication/register",
                       "api-reference/authentication/refresh-token",
                       "api-reference/authentication/change-password",
                       "api-reference/authentication/check-auth",
-                      "api-reference/authentication/verify-current-token"
+                      "api-reference/authentication/verify-current-token",
+                      "api-reference/authentication/oauth-login",
+                      "api-reference/authentication/oauth-callback"
                     ]
                   },
                   {
                     "group": "Agents",
                     "expanded": false,
                     "pages": [
+                      "api-reference/agents/optimize-instructions",
                       "api-reference/agents/list-agents",
                       "api-reference/agents/create-agent",
                       "api-reference/agents/get-agent",
@@ -159,9 +166,10 @@
                     "group": "Tasks",
                     "expanded": false,
                     "pages": [
+                      "api-reference/chat/create-task",
                       "api-reference/chat/get-tasks",
                       "api-reference/chat/get-task",
-                      "api-reference/chat/create-task",
+                      "api-reference/chat/update-task",
                       "api-reference/chat/delete-task",
                       "api-reference/chat/get-task-status",
                       "api-reference/chat/get-task-output-files",
@@ -173,11 +181,11 @@
                     "expanded": false,
                     "pages": [
                       "api-reference/files/upload-file",
-                      "api-reference/files/upload-multiple-files",
                       "api-reference/files/list-files",
+                      "api-reference/files/list-task-files",
+                      "api-reference/files/download-file",
                       "api-reference/files/preview-file",
                       "api-reference/files/public-preview-file",
-                      "api-reference/files/download-file",
                       "api-reference/files/delete-file"
                     ]
                   },
@@ -185,13 +193,18 @@
                     "group": "Knowledge Base",
                     "expanded": false,
                     "pages": [
-                      "api-reference/kb/search",
                       "api-reference/kb/ingest",
+                      "api-reference/kb/ingest-cloud",
+                      "api-reference/kb/search",
                       "api-reference/kb/ingest-web",
+                      "api-reference/kb/save-collection-config",
                       "api-reference/kb/list-collections-api",
+                      "api-reference/kb/batch-delete-collections-api",
+                      "api-reference/kb/check-documents-exist-api",
                       "api-reference/kb/rename-collection-api",
                       "api-reference/kb/delete-collection-api",
-                      "api-reference/kb/delete-document-api"
+                      "api-reference/kb/delete-document-api",
+                      "api-reference/kb/get-parse-result-api"
                     ]
                   },
                   {
@@ -211,32 +224,40 @@
                     "group": "Models",
                     "expanded": false,
                     "pages": [
-                      "api-reference/models/list-models",
-                      "api-reference/models/get-model",
                       "api-reference/models/create-model",
+                      "api-reference/models/list-models",
+                      "api-reference/models/create-model-1",
+                      "api-reference/models/get-user-default-models",
+                      "api-reference/models/set-user-default-model",
+                      "api-reference/models/get-model-by-path",
+                      "api-reference/models/update-model-by-path",
+                      "api-reference/models/delete-model-by-path",
+                      "api-reference/models/get-model",
                       "api-reference/models/update-model",
                       "api-reference/models/delete-model",
+                      "api-reference/models/test-model-connection",
+                      "api-reference/models/test-models",
+                      "api-reference/models/get-available-model-providers",
+                      "api-reference/models/list-model-categories",
                       "api-reference/models/get-models-summary",
                       "api-reference/models/get-default-model",
-                      "api-reference/models/set-user-default-model",
-                      "api-reference/models/get-user-default-model",
-                      "api-reference/models/get-user-default-models",
-                      "api-reference/models/delete-user-default-model",
-                      "api-reference/models/list-model-providers",
-                      "api-reference/models/get-compact-default-model",
                       "api-reference/models/get-general-default-model",
                       "api-reference/models/get-small-fast-default-model",
                       "api-reference/models/get-visual-default-model",
+                      "api-reference/models/get-compact-default-model",
                       "api-reference/models/get-embedding-default-model",
+                      "api-reference/models/list-model-providers",
                       "api-reference/models/list-model-abilities",
-                      "api-reference/models/list-model-categories",
+                      "api-reference/models/get-user-default-model",
+                      "api-reference/models/delete-user-default-model",
                       "api-reference/models/list-public-models",
-                      "api-reference/models/list-public-providers",
                       "api-reference/models/list-public-categories",
+                      "api-reference/models/list-public-providers",
                       "api-reference/models/get-public-summary",
+                      "api-reference/models/list-supported-providers",
                       "api-reference/models/fetch-provider-models",
                       "api-reference/models/fetch-multiple-providers-models",
-                      "api-reference/models/test-models"
+                      "api-reference/models/list-xinference-tts-models"
                     ]
                   },
                   {
@@ -244,7 +265,35 @@
                     "expanded": false,
                     "pages": [
                       "api-reference/tools/get-available-tools",
+                      "api-reference/tools/get-configurable-tools",
+                      "api-reference/tools/get-sql-connections",
+                      "api-reference/tools/upsert-sql-connection",
+                      "api-reference/tools/remove-sql-connection",
+                      "api-reference/tools/update-tool-enabled",
+                      "api-reference/tools/get-tool-credentials",
+                      "api-reference/tools/update-tool-credentials",
+                      "api-reference/tools/delete-tool-credential",
                       "api-reference/tools/get-tool-usage"
+                    ]
+                  },
+                  {
+                    "group": "Cloud storage",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/cloud-storage/list-connected-accounts",
+                      "api-reference/cloud-storage/delete-connected-account",
+                      "api-reference/cloud-storage/list-google-drives",
+                      "api-reference/cloud-storage/list-google-drive-files"
+                    ]
+                  },
+                  {
+                    "group": "Channels",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/channels/get-user-channels",
+                      "api-reference/channels/create-user-channel",
+                      "api-reference/channels/update-user-channel",
+                      "api-reference/channels/delete-user-channel"
                     ]
                   },
                   {
@@ -271,7 +320,8 @@
                     "group": "MCP",
                     "expanded": false,
                     "pages": [
-                      "api-reference/mcp-management/list-mcp-servers",
+                      "api-reference/mcp-management/list-mcp-apps",
+                      "api-reference/mcp-management/get-mcp-servers",
                       "api-reference/mcp-management/get-mcp-server",
                       "api-reference/mcp-management/create-mcp-server",
                       "api-reference/mcp-management/update-mcp-server",
@@ -281,6 +331,17 @@
                       "api-reference/mcp-management/get-mcp-server-tools",
                       "api-reference/mcp-management/get-mcp-server-logs",
                       "api-reference/mcp-management/get-supported-transports"
+                    ]
+                  },
+                  {
+                    "group": "Custom APIs",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/custom-api-management/list-custom-apis",
+                      "api-reference/custom-api-management/create-custom-api",
+                      "api-reference/custom-api-management/get-custom-api",
+                      "api-reference/custom-api-management/update-custom-api",
+                      "api-reference/custom-api-management/delete-custom-api"
                     ]
                   },
                   {
@@ -308,11 +369,11 @@
                     ]
                   },
                   {
-                    "group": "Admin",
+                    "group": "Widget",
                     "expanded": false,
                     "pages": [
-                      "api-reference/admin-users/get-users",
-                      "api-reference/admin-users/delete-user"
+                      "api-reference/widget/authenticate-widget",
+                      "api-reference/widget/create-widget-task"
                     ]
                   },
                   {

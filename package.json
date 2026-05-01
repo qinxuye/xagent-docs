@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "mintlify dev",
-    "build": "mintlify build"
+    "build": "mintlify validate",
+    "openapi-check": "mintlify openapi-check api-reference/openapi.json"
   },
   "keywords": [],
   "author": "",

@@ -36,84 +36,84 @@ For interactive API documentation with request/response examples, visit:
   <Card
     title="Authentication"
     icon="shield"
-    href="authentication"
+    href="/api-reference/authentication/login"
   >
     User authentication and token management
   </Card>
   <Card
     title="Agents"
     icon="robot"
-    href="agents"
+    href="/api-reference/agents/list-agents"
   >
     Create and manage AI agents
   </Card>
   <Card
     title="Tasks"
     icon="play"
-    href="tasks"
+    href="/api-reference/chat/create-task"
   >
     Submit and monitor task executions
   </Card>
   <Card
     title="Files"
     icon="file"
-    href="files"
+    href="/api-reference/files/upload-file"
   >
     Upload and manage task files
   </Card>
   <Card
     title="Knowledge Base"
     icon="database"
-    href="knowledge"
+    href="/api-reference/kb/search"
   >
     Manage document collections
   </Card>
   <Card
     title="Memory"
     icon="brain"
-    href="memory"
+    href="/api-reference/memory/list-memories"
   >
     Agent memory and learning
   </Card>
   <Card
     title="Models"
     icon="box"
-    href="models"
+    href="/api-reference/models/list-models"
   >
     Configure and use LLM models
   </Card>
   <Card
     title="Tools"
     icon="wrench"
-    href="tools"
+    href="/api-reference/tools/get-available-tools"
   >
     Available agent tools
   </Card>
   <Card
     title="Skills"
     icon="zap"
-    href="skills"
+    href="/api-reference/skills/list-skills"
   >
     Agent skill management
   </Card>
   <Card
     title="Templates"
     icon="copy"
-    href="templates"
+    href="/api-reference/templates/list-templates"
   >
     Agent templates
   </Card>
   <Card
     title="MCP"
     icon="server"
-    href="mcp"
+    href="/api-reference/mcp-management/get-mcp-servers"
   >
     MCP server management
   </Card>
   <Card
     title="Text2SQL"
     icon="code"
-    href="text2sql"
+    href="/api-reference/text2sql/get-databases"
   >
     Database query generation
   </Card>
@@ -138,19 +138,20 @@ curl -X POST http://localhost:8000/api/agents \
   -d '{
     "name": "Research Assistant",
     "description": "Helps with research tasks",
-    "instruction": "You are a helpful research assistant."
+    "instructions": "You are a helpful research assistant."
   }'
 ```
 
 ### Submit a Task
 
 ```bash
-curl -X POST http://localhost:8000/api/chat/tasks \
+curl -X POST http://localhost:8000/api/chat/task/create \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "agent_id": "agent-id",
-    "query": "Research recent AI trends"
+    "title": "Research recent AI trends",
+    "description": "Research recent AI trends",
+    "agent_id": 168
   }'
 ```
 

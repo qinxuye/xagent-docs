@@ -33,11 +33,19 @@ View your local preview at `http://localhost:3000`.
 API documentation is auto-generated from OpenAPI specification. To update:
 
 ```bash
-# Fetch latest OpenAPI spec from running Xagent instance
-curl http://localhost:8000/openapi.json > api-reference/openapi.json
+# Fetch the latest OpenAPI spec from a running Xagent instance
+curl http://localhost:8000/openapi.json > ./api-reference/openapi.json
 
-# Regenerate API docs (if needed)
-npx @mintlify/scraping@latest openapi-file ./api-reference/openapi.json -o api-reference
+# Regenerate API reference pages from the spec
+npx @mintlify/scraping@latest openapi-file ./api-reference/openapi.json -o /tmp/xagent-api-refresh
+
+# Sync generated pages into the docs site without deleting hand-written pages
+rsync -a \
+  --exclude 'introduction.mdx' \
+  --exclude 'websocket/' \
+  /tmp/xagent-api-refresh/ ./api-reference/
+
+# If endpoints were removed, delete stale generated files manually as needed
 ```
 
 ## Publishing Changes
