@@ -138,12 +138,20 @@
                       "api-reference/authentication/update-register-switch",
                       "api-reference/authentication/login",
                       "api-reference/authentication/register",
+                      "api-reference/authentication/forgot-password",
+                      "api-reference/authentication/reset-password",
+                      "api-reference/authentication/get-current-user-profile",
+                      "api-reference/authentication/update-current-user-email",
                       "api-reference/authentication/refresh-token",
                       "api-reference/authentication/change-password",
                       "api-reference/authentication/check-auth",
                       "api-reference/authentication/verify-current-token",
                       "api-reference/authentication/oauth-login",
-                      "api-reference/authentication/oauth-callback"
+                      "api-reference/authentication/oauth-callback",
+                      "api-reference/authentication/google-oidc-status",
+                      "api-reference/authentication/google-oidc-login",
+                      "api-reference/authentication/google-oidc-callback",
+                      "api-reference/authentication/google-oidc-exchange"
                     ]
                   },
                   {
@@ -158,8 +166,15 @@
                       "api-reference/agents/delete-agent",
                       "api-reference/agents/publish-agent",
                       "api-reference/agents/unpublish-agent",
+                      "api-reference/agents/get-agent-share-link",
+                      "api-reference/agents/enable-agent-share-link",
+                      "api-reference/agents/disable-agent-share-link",
+                      "api-reference/agents/rotate-agent-share-link",
                       "api-reference/agents/preview-agent",
-                      "api-reference/agents/upload-agent-logo"
+                      "api-reference/agents/upload-agent-logo",
+                      "api-reference/agents/get-agent-api-key",
+                      "api-reference/agents/generate-agent-api-key",
+                      "api-reference/agents/revoke-agent-api-key"
                     ]
                   },
                   {
@@ -182,9 +197,12 @@
                     "pages": [
                       "api-reference/files/upload-file",
                       "api-reference/files/list-files",
+                      "api-reference/files/list-file-tasks",
                       "api-reference/files/list-task-files",
                       "api-reference/files/download-file",
                       "api-reference/files/preview-file",
+                      "api-reference/files/preview-pptx-as-pdf",
+                      "api-reference/files/public-download-file",
                       "api-reference/files/public-preview-file",
                       "api-reference/files/delete-file"
                     ]
@@ -194,10 +212,13 @@
                     "expanded": false,
                     "pages": [
                       "api-reference/kb/ingest",
+                      "api-reference/kb/create-ingest-job",
                       "api-reference/kb/ingest-cloud",
                       "api-reference/kb/search",
                       "api-reference/kb/ingest-web",
+                      "api-reference/kb/create-ingest-web-job",
                       "api-reference/kb/save-collection-config",
+                      "api-reference/kb/set-collection-rerank-model",
                       "api-reference/kb/list-collections-api",
                       "api-reference/kb/batch-delete-collections-api",
                       "api-reference/kb/check-documents-exist-api",
@@ -297,6 +318,15 @@
                     ]
                   },
                   {
+                    "group": "Personal API keys",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/me/list-personal-keys",
+                      "api-reference/me/create-personal-key",
+                      "api-reference/me/revoke-personal-key"
+                    ]
+                  },
+                  {
                     "group": "Skills",
                     "expanded": false,
                     "pages": [
@@ -345,15 +375,52 @@
                     ]
                   },
                   {
-                    "group": "Text2SQL",
+                    "group": "Share",
                     "expanded": false,
                     "pages": [
-                      "api-reference/text2sql/get-databases",
-                      "api-reference/text2sql/create-database",
-                      "api-reference/text2sql/update-database",
-                      "api-reference/text2sql/delete-database",
-                      "api-reference/text2sql/test-database-connection",
-                      "api-reference/text2sql/predict-data"
+                      "api-reference/share/authenticate-share-link",
+                      "api-reference/share/upload-share-file",
+                      "api-reference/share/create-share-task"
+                    ]
+                  },
+                  {
+                    "group": "Workforces",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/workforces/list-workforces",
+                      "api-reference/workforces/create-workforce",
+                      "api-reference/workforces/create-workforce-from-prompt-endpoint",
+                      "api-reference/workforces/list-workforce-agent-options",
+                      "api-reference/workforces/get-workforce",
+                      "api-reference/workforces/archive-workforce",
+                      "api-reference/workforces/update-workforce",
+                      "api-reference/workforces/publish-workforce",
+                      "api-reference/workforces/unpublish-workforce",
+                      "api-reference/workforces/add-workforce-agent",
+                      "api-reference/workforces/remove-workforce-agent",
+                      "api-reference/workforces/update-workforce-agent",
+                      "api-reference/workforces/create-workforce-run",
+                      "api-reference/workforces/get-workforce-builder-messages",
+                      "api-reference/workforces/propose-workforce-changes",
+                      "api-reference/workforces/apply-workforce-changes",
+                      "api-reference/workforces/get-workforce-canvas"
+                    ]
+                  },
+                  {
+                    "group": "SDK v1",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/sdk-v1/get-me",
+                      "api-reference/sdk-v1/list-templates",
+                      "api-reference/sdk-v1/get-template",
+                      "api-reference/sdk-v1/list-agents",
+                      "api-reference/sdk-v1/create-agent",
+                      "api-reference/sdk-v1/create-agent-from-template",
+                      "api-reference/sdk-v1/rotate-agent-runtime-key",
+                      "api-reference/sdk-v1/create-chat-task",
+                      "api-reference/sdk-v1/append-message-to-task",
+                      "api-reference/sdk-v1/get-chat-task",
+                      "api-reference/sdk-v1/get-chat-task-steps"
                     ]
                   },
                   {
@@ -373,6 +440,7 @@
                     "expanded": false,
                     "pages": [
                       "api-reference/widget/authenticate-widget",
+                      "api-reference/widget/upload-widget-file",
                       "api-reference/widget/create-widget-task"
                     ]
                   },
